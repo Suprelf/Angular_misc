@@ -24,36 +24,6 @@ export class TableComponent implements OnInit {
   constructor() { 
     this.sortedData = this.Data.slice();
   }
-
-  
-  public sortData(sort: Sort) {
-    const data = this.Data.slice();
-    if (!sort.active || sort.direction === ''){
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a,b)=> {
-      const isAscending = sort.direction === 'asc';
-      switch (sort.active){
-        case 'id':
-          return compare(a.id, b.id, isAscending);
-
-        case 'name':
-          return compare(a.name, b.name, isAscending);
-
-        case 'age':
-          return compare(a.age, b.age, isAscending);
-
-        case 'sallary':
-          return compare(a.sallary, b.sallary, isAscending);
-
-        default:
-          return 0;
-      }
-    });
-  }
-  
  
   public deleteItem(element: InterfaceElements){
     this.sortedData = this.sortedData.filter((item: InterfaceElements) => item.id !== element.id)
@@ -67,16 +37,42 @@ export class TableComponent implements OnInit {
     });
   }
  
+  public SortDesc(objField: string){
+    if(objField === 'id'){
+      this.sortedData.sort((a,b) => (a.id < b.id ? 1: -1) )
+    }
+    if(objField === 'name'){
+      this.sortedData.sort((a,b) => (a.name < b.name ? 1: -1) )
+    }
+    if(objField === 'age'){
+      this.sortedData.sort((a,b) => (a.age < b.age ? 1: -1) )
+    }
+    if(objField === 'sallary'){
+      this.sortedData.sort((a,b) => (a.sallary < b.sallary ? 1: -1) )
+    }
+    
+    
+  }
+  public SortAsc(objField: string){
+    if(objField === 'id'){
+      this.sortedData.sort((a,b) => (a.id > b.id ? 1: -1) )
+    }
+    if(objField === 'name'){
+      this.sortedData.sort((a,b) => (a.name > b.name ? 1: -1) )
+    }
+    if(objField === 'age'){
+      this.sortedData.sort((a,b) => (a.age > b.age ? 1: -1) )
+    }
+    if(objField === 'sallary'){
+      this.sortedData.sort((a,b) => (a.sallary > b.sallary ? 1: -1) )
+    }
+  }
+
+
 
 
   ngOnInit(): void {  }
   
-}
-
-
-function compare(a: number | string, b: number | string, isAscending: boolean) {
-  return (a<b ? -1:1)*(isAscending ? 1 : -1)
-    
 }
 
 

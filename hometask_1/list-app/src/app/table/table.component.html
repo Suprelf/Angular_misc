@@ -2,16 +2,20 @@
     <thead class="table-header">
         <tr>
             <th mat-sort-header="id" scope="col"> Id 
-                
+                <span class="sort-arrow" (click)="SortAsc('id')">🠕</span>
+                <span class="sort-arrow" (click)="SortDesc('id')">🠗</span>
             </th> 
             <th mat-sort-header="name" scope="col">Name
-                
+                <span class="sort-arrow" (click)="SortAsc('name')">🠕</span>
+                <span class="sort-arrow" (click)="SortDesc('name')">🠗</span>
             </th>
             <th mat-sort-header="age" scope="col">Age
-                
+                <span class="sort-arrow" (click)="SortAsc('age')">🠕</span>
+                <span class="sort-arrow" (click)="SortDesc('age')">🠗</span>
             </th>
             <th mat-sort-header="sallary" scope="col">Sallary
-                
+                <span class="sort-arrow" (click)="SortAsc('sallary')">🠕</span>
+                <span class="sort-arrow" (click)="SortDesc('sallary')">🠗</span>
             </th>
         </tr>
         <tr>
@@ -37,4 +41,6 @@
             </span>
         </tr>
     </tbody>
+
+    
 </table>
