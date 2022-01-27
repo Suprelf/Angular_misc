@@ -1,0 +1,37 @@
+.table-main {
+    align-items: center;
+    font-size: larger;
+    padding: 10px;
+    border: solid black 2px;
+    display: inline-block;
+    margin: 10px;
+}
+.table-inputs {
+    width: 150px;
+}
+.table-else {
+    
+    margin: 100px;
+}
+.button-add {
+    color: green;
+    background-color: lightgreen;
+    font-size: x-large;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
+.button-del {
+    color: red;
+    background-color: lightsalmon;
+    width: 30px;
+    height: 30px;
+}
+
+td {
+    background-color: linen;
+    padding: 5px;
+}
+button {
+    margin-left: 10px;
+}

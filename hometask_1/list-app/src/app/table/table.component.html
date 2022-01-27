@@ -1,0 +1,40 @@
+<table class="table-main"  > <!--matSort (matSortChange)="sortData($event)"-->
+    <thead class="table-header">
+        <tr>
+            <th mat-sort-header="id" scope="col"> Id 
+                
+            </th> 
+            <th mat-sort-header="name" scope="col">Name
+                
+            </th>
+            <th mat-sort-header="age" scope="col">Age
+                
+            </th>
+            <th mat-sort-header="sallary" scope="col">Sallary
+                
+            </th>
+        </tr>
+        <tr>
+            
+            <th><input class="table-inputs" type="text" placeholder="Id (readonly)"  readonly></th>
+            <th><input class="table-inputs" type="text" placeholder="Name"    id="InputName"></th>
+            <th><input class="table-inputs" type="text" placeholder="Age"     id="InputAge"></th>
+            <th><input class="table-inputs" type="text" placeholder="Sallary" id="InputSallary"></th>
+            <span>
+                <button class="button-add" (click)="addItem()">+</button>
+            </span>
+            
+        </tr>
+    </thead>
+    <tbody >
+        <tr class="table-else" *ngFor="let elem of sortedData">
+            <td>{{elem.id}}</td>
+            <td>{{elem.name}}</td>
+            <td>{{elem.age}}</td>
+            <td>{{elem.sallary}}</td>
+            <span> 
+                <button class="button-del" (click)="deleteItem(elem)"> ✖ </button> 
+            </span>
+        </tr>
+    </tbody>
+</table>
