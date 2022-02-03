@@ -1,0 +1,71 @@
+<div class="main">
+  <header>TODO LIST APP</header>
+  <div class="body">
+    
+    <span class="date"> {{currDate | date:'E d MMMM, y'}}  
+      <button class="btn-addnew-top" (click) = "setInputState(true)"
+              *ngIf="inputState == false && TaskList.length != 0"> + 
+      </button> 
+    </span>
+        
+    <div *ngIf="TaskList.length != 0"> 
+      <span appCrossedText> {{countComplete().completed}} completed,</span>
+      <span> {{countComplete().uncompleted}} uncompleted</span>
+    </div>
+
+    <div class="inpt-spacing" *ngIf="inputState == true">  
+          <input  class="inpt-addnew" id = "InputName" placeholder="Item name">
+          <button class="btn-addnew-inpt" (click) = "addTask()"> Add </button>
+          <button class="btn-addnew-cncl" (click) = "setInputState(false)"> Cancel </button> 
+    </div>
+        
+    <p class="btn-addnew-spacing">
+      <button class="btn-addnew-first" 
+              *ngIf="TaskList.length == 0 && firstInputState == true" 
+              (click)="inputState = true; firstInputState = false">
+                Add new item
+      </button>
+    </p>
+    
+    <div class="expandables">
+      <mat-accordion *ngIf="TaskList.length != 0">
+          <mat-expansion-panel (opened)="panel1OpenState = true"
+                              (closed)="panel1OpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Uncompleted
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="exp-checkfield" *ngFor="let elem of TaskList" [style.display]="!elem.checked ? 'block' : 'none'">
+                <span *ngIf="!elem.checked ">
+                  <input class="check" type="checkbox" (click)="toogleBox(elem.id)"> 
+                  <span class="check-txt" >{{elem.name}}</span> 
+                </span>
+            </div>
+
+          </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion *ngIf="TaskList.length != 0"> 
+          <mat-expansion-panel (opened)="panel2OpenState = true"
+                              (closed)="panel2OpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Completed
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div class="exp-checkfield" *ngFor="let elem of TaskList" [style.display]="elem.checked ? 'block' : 'none'" >
+                <span *ngIf="elem.checked">
+                  <input class="check" type="checkbox" [checked]="true" (click)="toogleBox(elem.id)" > 
+                  <span class="check-txt" appCrossedText>{{elem.name}}</span> 
+                </span>
+            </div>
+
+          </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+  </div>
+</div>

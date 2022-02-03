@@ -1,0 +1,146 @@
+.main {
+    width: 500px;
+    margin: 10px;
+    outline: black 2px solid;
+}
+
+header {
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    
+    padding: 15px;
+    text-align: center;
+}
+.body {
+    padding: 10px;
+    background-color: #F8F8F8;
+    min-height: 600px;
+}
+.btn-addnew-spacing {
+   position: absolute;
+   padding-top: 200px;
+   padding-left: 90px;
+    
+}
+.btn-addnew-first {
+    padding: 15px;
+    width: 280px;
+    padding-left: 25px;
+
+    font-size: larger;
+    font-weight: bolder;
+    align-items: center;
+
+    border: none;
+    border-radius: 7px;
+    background-color: 	#383838;
+    color: white;
+}
+.date {
+    font-size: 26px;
+    font-weight: 600;
+}
+.btn-addnew-cncl{
+    padding: 5px;
+    height: 32px;
+    width: auto;
+
+    background-color: #F8F8F8;
+    color: gray;
+    border: solid grey 2px;
+    border-radius: 5px;
+    font-weight: 500;
+
+    flex-grow: 3;
+}
+.btn-addnew-cncl:hover{
+    background-color: grey;
+    color: #F8F8F8;
+}
+.btn-addnew-inpt{
+    padding: 5px;
+    height: 32px;
+    width: auto;
+
+    background-color: gray;
+    color: #F8F8F8;
+    border: solid grey 2px;
+    border-radius: 5px;
+    font-weight: 500;
+
+    margin: 8px;
+    flex-grow: 3;
+}
+.btn-addnew-inpt:hover{
+    background-color: #F8F8F8;
+    color: grey;
+}
+.inpt-spacing {
+    width: 100%;
+    padding-top: 14px ;
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.inpt-addnew {
+    height: 26px;
+    background-color: #F8F8F8;
+    color: gray ;
+    border: solid grey 2px;
+    border-radius: 5px;
+
+    width: auto;
+    flex-grow: 10;
+}
+.date{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    justify-content: space-between;
+}
+.btn-addnew-top {
+    background-color: black;
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 32px;
+    
+    display: inline-flex;
+    align-items: center;
+}
+.expandables{
+    padding: 0px;
+    margin: 0px;
+}
+.mat-expansion-panel-header{
+    padding-left: 0;
+    padding-right: 5px;
+
+    color: gray;
+    font-size: 24px;
+}
+.mat-accordion{
+    padding: 10px;
+}
+.exp-checkfield{
+    margin-top: 7px;
+    padding: 7px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 1px;
+}
+.mat-expansion-panel-body {
+    padding: 0px;
+}
+.check {
+    margin-right: 17px;
+}
+.check-txt {
+    font-size: large;
+}
