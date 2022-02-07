@@ -1,0 +1,13 @@
+<button (click)="Btnclick()">Show/hide body info</button>
+
+<div class="cards-box">
+  <div class="card-item" *ngFor="let data of Contents" >
+    
+    <app-app-card >
+      <div class="head-content" head_content> {{data.head_val}} </div>
+      <div class="body-content" #bodycontent body_content> {{data.body_val}} </div>  
+    </app-app-card> 
+
+  </div>
+</div>
+
