@@ -1,0 +1,8 @@
+<div class="timer-container">
+    <div>{{minutes}}m : <span *ngIf="seconds<=9">0</span>{{seconds}}s {{message}}</div>
+    <hr>
+    <div class="timer-buttons">
+        <button (click)="startTimer()">Start</button>
+        <button (click)="resetTimer()">Reset</button>
+    </div>    
+</div>

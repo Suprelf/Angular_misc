@@ -1,0 +1,16 @@
+.timer-container {
+    padding: 10px;
+    border: solid gray 3px;
+    width: 150px;
+    margin-top: 30px;
+
+    text-align: center;
+}
+.timer-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-flow: column;
+}
+button {
+    margin: 5px;
+}

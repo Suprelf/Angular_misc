@@ -1,0 +1,24 @@
+
+<div class="calculator-container">
+    <h1>Mortgage calculator</h1>
+
+    <div> Mortgage amount ($): 
+        <p><input id="amount" #amount_inp placeholder="Mortgage amount ($)"></p>
+    </div>
+    
+    <div> Interest rate (%): 
+        <p><input id="rate" #rate_inp placeholder="Interest rate (%)"> </p>
+    </div>
+    
+    <div> Mortgage length (month): 
+         <p><input id="length" #length_inp placeholder="Mortgage length (month)"> </p>
+    </div>
+    
+    <div> Down payment ($): 
+         <p><input id="down" #down_inp placeholder="Down payment ($)"> </p>
+    </div>
+    
+    <h2> Monthly payment: {{final_res}}</h2>
+    
+    <p class="error-msg">{{message}}</p>
+</div>
