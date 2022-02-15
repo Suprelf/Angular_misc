@@ -1,0 +1,78 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+
+    <input class='input-text' placeholder="Name" 
+        formControlName="name">
+        <br>
+        <div class="input-empty" *ngIf="name!.invalid && (name!.dirty || name!.touched)">Fill this field!</div>
+
+    <input class='input-text' placeholder="Email"
+        formControlName="email">
+        <br>
+        <div class="input-empty" *ngIf="email!.invalid && (email!.dirty || email!.touched)">Fill this field!</div>
+
+    <div class="input-bool">
+        <input type="radio" formControlName="sex" value="male" name="sex" ngModel required>
+        <label>Male </label>
+        
+        <input type="radio" formControlName="sex" value="female" name="sex" >
+        <label>Female</label>        
+    </div><br>
+    <div class="input-empty" *ngIf="sex!.invalid && (sex!.dirty || sex!.touched)">Fill this field!</div>
+
+
+    
+
+    <select class='input-text' formControlName="country">
+        <option value="" disabled selected>Country</option>
+        <option>UA</option>
+        <option>USA</option>
+    </select><br>
+    <div class="input-empty" *ngIf="country!.invalid && (country!.dirty || country!.touched)">Fill this field!</div>
+
+    <select class='input-text' *ngIf="form.value.country == 'USA'" placeholder="State" formControlName="state">
+        <option value="" disabled selected>State</option>
+        <option>New York</option>
+        <option>Alabama</option>
+    </select><br>
+    <div class="input-empty" *ngIf="state!.invalid && (state!.dirty || state!.touched)">Fill this field!</div>
+    
+    <div class="input-bool"  formArrayName="hards">
+        <div *ngFor="let elem of hards.controls; let idx = index" [formGroupName]="idx" >
+            <input type="checkbox" formControlName="hard" ngModel required>
+                {{elem.get('label')?.value}}
+             <br>
+        </div><br>        
+    </div>
+    <div class="input-empty" *ngIf="hards!.invalid && (hards!.dirty || hards!.touched)">Fill this fields!</div>
+    
+
+    <input class='input-text' placeholder="Password" formControlName="password"><br>
+    <div>
+        <span *ngIf="passwordIndication == 0"> 
+            <span class="pass-empty"></span> 
+            <span class="pass-empty"></span>
+            <span class="pass-empty"></span>
+        </span>
+        <span *ngIf="passwordIndication == 1">
+            <span class="pass-easy"></span> 
+            <span class="pass-empty"></span>
+            <span class="pass-empty"></span>
+            <div style="color: crimson">Your password is easy</div>  
+        </span>
+        <span *ngIf="passwordIndication == 2">
+            <span class="pass-mid"></span> 
+            <span class="pass-mid"></span>
+            <span class="pass-empty"></span>
+            <div style="color: sandybrown">Your password is middle</div>  
+        </span>
+        <span *ngIf="passwordIndication == 3">
+            <span class="pass-strong"></span> 
+            <span class="pass-strong"></span>
+            <span class="pass-strong"></span>
+            <div style="color: green">Your password is strong</div>  
+        </span>
+    </div>
+    <div class="input-empty" *ngIf="password!.invalid && (password!.dirty || password!.touched)">Fill this field!</div>
+
+    <button [disabled]="form.invalid" type="submit">Submit</button>
+</form>

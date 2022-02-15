@@ -1,0 +1,95 @@
+* {
+    font: 1em "Verdana", sans-serif;
+}
+
+form {
+    width: 300px;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    padding-bottom: 50px;
+
+    background-color: rgb(212, 212, 212);
+}
+
+.pass-empty {
+    display: inline-block;
+
+    min-width: 70px;
+    min-height: 9px;
+    background-color: white;
+
+    margin: 3px;
+
+    
+    border-radius: 35px;
+}
+.pass-easy {
+    display: inline-block;
+
+    min-width: 70px;
+    min-height: 7px;
+    background-color: crimson;
+
+    margin: 3px;
+
+    border: 1px solid crimson;
+    border-radius: 35px;
+}
+.pass-mid {
+    display: inline-block;
+
+    min-width: 70px;
+    min-height: 7px;
+    background-color: sandybrown;
+
+    margin: 3px;
+
+    border: 1px solid sandybrown;
+    border-radius: 35px;
+}
+.pass-strong {
+    display: inline-block;
+
+    min-width: 70px;
+    min-height: 7px;
+    background-color: green;
+
+    margin: 3px;
+
+    border: 1px solid green;
+    border-radius: 35px;
+}
+.input-text {
+    width: 220px;
+    height: 24px;
+    margin: 10px 0 2px 0;
+}
+input.ng-invalid  {
+    border: red 2px solid;
+}
+input.ng-valid {
+    border: green 2px solid;
+}
+input.ng-untouched {
+    border: black 2px solid;
+}
+.input-empty {
+    color: red;
+    text-align: left;
+    margin-left: 38px;
+}
+.input-bool {
+    text-align: left;
+    margin-left: 38px;
+    margin-top: 10px;
+}
+
+
+button {
+    margin-top: 20px;
+    width: 230px;
+    height: 34px;
+    border: solid rgb(85, 85, 85) 2px;
+    text-align: center;
+}
