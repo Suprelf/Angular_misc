@@ -1,0 +1,26 @@
+<div class="main">
+    <header class="header-todo">
+        <h1 (click)="clickBack()" class="back"> < </h1>
+        <span>TODO LIST APP </span>
+        <button  routerLink="/account" class="header-account">{{username.charAt(0)}}</button>
+    </header>
+
+    <div style="margin: 10px;">
+        <h2>{{currentDate | date:'E d MMMM, y'}}</h2>
+    </div>
+    
+    <div style="margin: 10px; display: flex; flex-direction: column; gap: 20px;">
+        <input placeholder="todoname" [(ngModel)]="todoName" class="big-control" style="width: 90%;">
+        <input placeholder="add aditional info" [(ngModel)]="todoInfo" class="big-control" style="height: 60px; width: 90%;">
+    </div>
+    
+    <button (click)="editTask()"
+    style="
+    margin: 7px;
+    height: 40px; width: 160px;
+    background-color: #434343; font-size: large;
+    border-radius: 6px; border: none;
+    color: white;">Save</button>
+</div>
+
+<router-outlet></router-outlet>

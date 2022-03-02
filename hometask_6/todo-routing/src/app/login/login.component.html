@@ -1,0 +1,21 @@
+<div class="main">
+    <header class="header-todo"> TODO LIST APP </header>
+
+    <div class="center-todo">
+        <div class="center-todo-div"><input class="big-control" placeholder="User name" [(ngModel)]="username"></div>
+        <div class="center-todo-div"><input class="big-control" placeholder="Password" [(ngModel)]="password" type="password"></div>
+        <div class="center-todo-div" *ngIf="loginFailure">Something went wrong</div>
+    
+        <div class="center-todo-div">
+            <button 
+            class="big-control"
+            style="margin-top: 15px; height: 45px; width: 260px; 
+            background-color: #434343; color: white;
+            font-size: larger; border-radius: 6px;"
+            (click)="onLogin()" routerLink="/login">Login</button>
+        </div>
+    </div>
+    
+</div>
+
+<router-outlet></router-outlet>

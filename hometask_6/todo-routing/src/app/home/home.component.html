@@ -1,0 +1,25 @@
+<div class="main">
+    <header class="header-todo">
+        <span>TODO LIST APP </span>
+        <button class="header-account" routerLink="/account">{{username.charAt(0)}}</button>
+    </header>
+
+    <h2 style=" display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;">
+        Welcome {{username}}
+    </h2>
+
+    <div class="center-todo">
+        <button class="big-control" routerLink="/create-new-todo"
+        style="margin-top: 15px; height: 45px; width: 260px; 
+            background-color: #434343; color: white;
+            font-size: larger; border-radius: 6px;">
+            Add new item
+        </button>
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>

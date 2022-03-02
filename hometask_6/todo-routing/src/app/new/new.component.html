@@ -1,0 +1,23 @@
+<div class="main">
+    <header class="header-todo">
+        <span>TODO LIST APP </span>
+        <button routerLink="/account" class="header-account">{{username.charAt(0)}}</button>
+    </header>
+
+    <h2 style=" display: flex;
+                justify-content: flex-start;
+                margin: 10px;
+                flex-direction: row;">
+       {{currentDate | date:'E d MMMM, y'}}
+    </h2>
+
+    <div class="addnew-panel">
+        <input type="text" [(ngModel)]="todoName" class="big-control" placeholder="Item name">
+        <button (click)="addNew()" routerLink="/todo-list" class="addnew-panel-btn" 
+        style="background-color: #434343; color: white;"
+                >Add</button>
+        <button (click)="btnCancel()" class="addnew-panel-btn">Cancel</button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

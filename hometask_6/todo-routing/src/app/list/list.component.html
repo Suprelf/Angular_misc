@@ -1,0 +1,66 @@
+<div class="main">
+    <header class="header-todo">
+        <span>TODO LIST APP </span>
+        <button routerLink="/account" class="header-account">{{username.charAt(0)}}</button>
+
+    </header>
+    <div class="list-panel">
+        <div style="font-size: larger;">{{currentDate | date:'E d MMMM, y'}}</div>
+        <button (click)="setInputState(!inputState)" class="set-input">
+            <span *ngIf="!inputState">+</span>
+            <span *ngIf="inputState">-</span>
+        </button>
+    </div>
+        
+        <div style="margin: 10px;">
+            {{TodoService.completed}} completed, <span appCrossedText> {{TodoService.uncompleted}} uncompleted </span>
+        </div>
+    
+
+    <div *ngIf="inputState" class="addnew-panel">
+        <input type="text" [(ngModel)]="todoName" class="big-control">
+        <button (click)="addNew(); countComplete()" class="addnew-panel-btn"
+        style="background-color: #434343; color: white;">Add</button>
+        <button (click)="btnCancel()" class="addnew-panel-btn">Cancel</button>
+    </div>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header style="font-size: x-large;">
+                Uncompleted
+            </mat-expansion-panel-header>
+
+            <div *ngFor="let task of TaskList" [style.display]="!task.checked ? 'block' : 'none'" class="task">
+                <span *ngIf="!task.checked " class="task-inner">
+                    <mat-checkbox (change)="TodoService.ToogleTask(task.id); countComplete()">
+                        {{task.name}}
+                    </mat-checkbox>
+                    <button [routerLink]="[task.id]" [queryParams]="{id: task.id}" class="task-i"> i </button>
+                </span>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header  style="font-size: x-large;">
+                Completed
+            </mat-expansion-panel-header>
+
+            <div *ngFor="let task of TaskList" [style.display]="task.checked ? 'block' : 'none'" class="task">
+                <span *ngIf="task.checked " class="task-inner">
+                    <mat-checkbox (change)="TodoService.ToogleTask(task.id); countComplete()" [checked]="task.checked"
+                        appCrossedText>
+                        {{task.name}}
+                    </mat-checkbox>
+                    <button [routerLink]="[task.id]" [queryParams]="{id: task.id}" class="task-i"> i </button>
+                </span>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
+
+<router-outlet></router-outlet>

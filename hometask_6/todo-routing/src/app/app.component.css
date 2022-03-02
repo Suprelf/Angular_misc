@@ -1,0 +1,142 @@
+.main {
+    width: 400px;
+    min-height: 640px;
+    height: auto;
+    margin: 10px;
+    outline: black 2px solid;
+}
+.header-todo {
+    position: relative;
+    background-color: black;
+    color: white;
+    height: 64px;
+    font-size: x-large;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    align-content: space-around;
+    
+}
+.header-account {
+    position: absolute;
+    right: 16px;
+
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    font-size: x-large;
+}
+.center-todo {
+    margin-top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.center-todo-div {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.big-control {
+    width: 250px;
+    height: 30px;
+}
+.addnew-panel {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px;
+}
+.addnew-panel-btn {
+    width: 60px;
+    background-color: white;
+    border-radius: 2px;
+    border: 2px solid #434343;
+}
+.back {
+    position: absolute;
+    left: 16px;
+
+    font-size: larger;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    gap: 30px;
+    margin: 15px;
+}
+.list-panel {
+    margin: 10px;
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.set-input {
+    border-radius: 5px;
+    height: 25px;
+    width: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    font-size: x-large;
+    background-color: #434343;
+    color: white;
+}
+.task {
+    border: 2px solid #c7c7c7;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 7px 0px 7px 7px;
+
+    width: 100%;
+}
+.task-inner {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.task-i {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    background-color: #c4c4c4;
+    border: none;
+    font-weight: 600;
+
+    border-radius: 30px;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+}
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    background-color: black !important;
+  }
+  
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+  }
+  
+  ::ng-deep .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+  }
+  

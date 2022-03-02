@@ -1,0 +1,30 @@
+<div class="main">
+    <header class="header-todo">
+        <h1 (click)="clickBack()" class="back"> < </h1>
+        <span>TODO LIST APP </span>
+        <button routerLink="/account" class="header-account">{{username.charAt(0)}}</button>
+    </header>
+
+    <div style="margin: 10px;">
+        <h2>{{currentDate | date:'E d MMMM, y'}}</h2>
+    </div>
+
+    <div style="margin: 10px; font-weight: 600; font-size: large;">
+        <h3>{{nameDetails}} details</h3>
+    </div>
+
+    <div style="margin: 10px;">
+        <p>Created {{createdDetails | date:'E d MMMM, y'}}</p>
+        <p *ngIf="infoDetails == '' ">This todo has no aditional info</p>
+        <p *ngIf="infoDetails != '' ">{{infoDetails}}</p>
+    </div>
+
+    <button [routerLink]="['edit']" [queryParams]="{id: todoId}" 
+    style="
+    margin: 7px;
+    height: 40px; width: 160px;
+    background-color: #434343; font-size: large;
+    border-radius: 6px; border: none;
+    color: white;">Edit</button>
+</div>
+<router-outlet></router-outlet>

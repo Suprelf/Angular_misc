@@ -1,0 +1,36 @@
+<div class="main">
+    <header class="header-todo">
+        <h1 (click)="clickBack()" class="back"> < </h1>
+            <span> TODO LIST APP </span>
+            <button routerLink="/account" class="header-account">{{username.charAt(0)}}</button>
+    </header>
+
+    <div class="center-todo-div">
+        <h1>{{username}}</h1>
+
+        <div>
+            <div *ngIf="TodoService.Data.length != 0">
+                <p>You have {{TodoService.uncompleted}} to complete</p>
+                <p>You already complete {{TodoService.completed}}</p>
+            </div>
+
+            <p *ngIf="TodoService.Data.length == 0">You don't have any task yet! But you could create!</p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button routerLink='/create-new-todo' style="
+                height: 40px;
+                background-color: #434343; font-size: large;
+                border-radius: 6px;
+                color: white;"> Add item</button>
+        <button routerLink='/login' style="
+                height: 40px;
+                background-color: #434343; font-size: large;
+                border-radius: 6px;
+                color: white;">Log out</button>
+    </div>
+
+
+</div>
+<router-outlet></router-outlet>
